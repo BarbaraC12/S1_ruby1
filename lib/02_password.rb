@@ -13,11 +13,10 @@ def signup
       puts "Bravo et bienvenue a toi! Pour continuer log toi."
     end
   end
+  return password
 end
-#signup
 
-def login
-  signup
+def login(password)
   mdp = ""
   puts "Pour te connecter rentre ton mot de passe:"
   while mdp != password
@@ -29,10 +28,8 @@ def login
     end
   end
 end
-login
 
 def welcome_screen
-login(password)
 puts
 puts
 puts
@@ -70,6 +67,13 @@ puts
 puts
 puts "Règle n°1 : le Docteur ment."
 end
-#welcome_screen
+
+def perform
+password = signup
+login(password)
+welcome_screen
+end
+perform
+
 
 
